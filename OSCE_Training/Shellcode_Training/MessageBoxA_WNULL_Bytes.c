@@ -9,6 +9,27 @@ char code[] =
 // Generator used: mona.py -> Immunity Debbuger plugin
 // Immunity Command e.g: !mona assemble -s "push ebx"
 
+ 
+// MessageBoxA() Call
+//
+// 0040135A  |. 55             PUSH EBP
+// 0040135B  |. 89E5           MOV EBP,ESP
+// 0040135D  |. 51             PUSH ECX
+// 0040135E  |. 83EC 14        SUB ESP,14
+// 00401361  |. E8 EA050000    CALL out.00401950
+// 00401366  |. C74424 0C 0000>MOV DWORD PTR SS:[ESP+C],0               ; |
+// 0040136E  |. C74424 08 2430>MOV DWORD PTR SS:[ESP+8],out.00403024    ; |ASCII "w4fz5uck5"
+// 00401376  |. C74424 04 3030>MOV DWORD PTR SS:[ESP+4],out.00403030    ; |ASCII "You have been pwned by w4fz5uck5"
+// 0040137E  |. C70424 0000000>MOV DWORD PTR SS:[ESP],0                 ; |
+// 00401385  |. E8 66080000    CALL <JMP.&USER32.MessageBoxA>           ; \MessageBoxA
+// 0040138A  |. 83EC 10        SUB ESP,10
+// 0040138D  |. B8 00000000    MOV EAX,0
+// 00401392  |. 8B4D FC        MOV ECX,DWORD PTR SS:[EBP-4]
+// 00401395  |. C9             LEAVE
+// 00401396  |. 8D61 FC        LEA ESP,DWORD PTR DS:[ECX-4]
+// 00401399  \. C3             RETN
+
+ 
 // --------------SHELLCODE MAIN IDEA--------------
 //
 // PUSH w4fz5uck5
@@ -39,17 +60,17 @@ char code[] =
 "\x68\x20\x62\x65\x65"    //PUSH 0x65656220
 "\x68\x68\x61\x76\x65"    //PUSH 0x65766168
 "\x68\x59\x6f\x75\x20"    //PUSH 0x20756f59
-"\x8b\xcc"				  //MOV ecx, esp
-"\x33\xc0"				  //XOR eax,eax
-"\x50"					  //PUSH eax		
-"\x53"				      //PUSH ebx
-"\x51"					  //PUSH ecx
-"\x50"					  //PUSH eax		
-"\x50"					  //PUSH eax		
+"\x8b\xcc"				            //MOV ecx, esp
+"\x33\xc0"				            //XOR eax,eax
+"\x50"					               //PUSH eax		
+"\x53"				                //PUSH ebx
+"\x51"					               //PUSH ecx
+"\x50"					               //PUSH eax		
+"\x50"					               //PUSH eax		
 "\xc7\xc6\xea\x07\x45\x7e"//MOV esi, 0x7e4507ea(USER32.dll -> MessageBoxA())
-"\xff\xe6"				  //JMP esi	
-"\x33\xc0"				  //XOR eax,eax
-"\xff\xd0";				  //CALL eax
+"\xff\xe6"				            //JMP esi	
+"\x33\xc0"				            //XOR eax,eax
+"\xff\xd0";				           //CALL eax
 
 int main(int argc, char **argv)
 {
