@@ -39,8 +39,8 @@ char code[] =
 "\x68\x20\x62\x65\x65"    //PUSH 0x65656220
 "\x68\x68\x61\x76\x65"    //PUSH 0x65766168
 "\x68\x59\x6f\x75\x20"    //PUSH 0x20756f59
-"\x8b\xcc"				  //MOV ecx, esp
-"\x33\xc0"				  //XOR eax,eax
+"\x8b\xcc"				            //MOV ecx, esp
+"\x33\xc0"				            //XOR eax,eax
 "\x50"					  //PUSH eax		
 "\x53"				      //PUSH ebx
 "\x51"					  //PUSH ecx
