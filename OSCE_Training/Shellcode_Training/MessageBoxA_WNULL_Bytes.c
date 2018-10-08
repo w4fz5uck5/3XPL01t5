@@ -60,17 +60,17 @@ char code[] =
 "\x68\x20\x62\x65\x65"    //PUSH 0x65656220
 "\x68\x68\x61\x76\x65"    //PUSH 0x65766168
 "\x68\x59\x6f\x75\x20"    //PUSH 0x20756f59
-"\x8b\xcc"				            //MOV ecx, esp
-"\x33\xc0"				            //XOR eax,eax
-"\x50"					               //PUSH eax		
-"\x53"				                //PUSH ebx
-"\x51"					               //PUSH ecx
-"\x50"					               //PUSH eax		
-"\x50"					               //PUSH eax		
+"\x8b\xcc"		  //MOV ecx, esp
+"\x33\xc0"		  //XOR eax,eax
+"\x50"			  //PUSH eax		
+"\x53"			  //PUSH ebx
+"\x51"			  //PUSH ecx
+"\x50"			  //PUSH eax		
+"\x50"			  //PUSH eax		
 "\xc7\xc6\xea\x07\x45\x7e"//MOV esi, 0x7e4507ea(USER32.dll -> MessageBoxA())
-"\xff\xe6"				            //JMP esi	
-"\x33\xc0"				            //XOR eax,eax
-"\xff\xd0";				           //CALL eax
+"\xff\xe6"		  //JMP esi	
+"\x33\xc0"		  //XOR eax,eax
+"\xff\xd0";		  //CALL eax
 
 int main(int argc, char **argv)
 {
