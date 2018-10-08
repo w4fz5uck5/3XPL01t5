@@ -18,3 +18,6 @@ FuzzySecurity:
 ihack4Falafel:
     https://ihack4falafel.com/2018/01/rot-n-shift-n-xor-n-shellcode-encoder-linux-x86/
 
+
+Basic-reverse-engineering-immunity-debugger:
+    https://www.sans.org/reading-room/whitepapers/malicious/basic-reverse-engineering-immunity-debugger-36982
