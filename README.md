@@ -1,4 +1,4 @@
-# writeups
+# Writeups / Exploits / Training 
 
 Enjoy ;) 
 
