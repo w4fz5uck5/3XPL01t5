@@ -1,0 +1,1 @@
+https://ihack4falafel.com/2018/01/rot-n-shift-n-xor-n-shellcode-encoder-linux-x86/
