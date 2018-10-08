@@ -5,6 +5,30 @@
 # and will produce the opcodes 
 # to push this string onto the stack
 #
+#
+#C:\shellcode>perl pvePushString.pl
+#  usage: pvePushString.pl "String to put on stack"
+#
+#C:\shellcode>perl pvePushString.pl "Corelan"
+#String length : 7
+#Opcodes to push this string onto the stack :
+#
+#"\x68\x6c\x61\x6e\x00"    //PUSH 0x006e616c
+#"\x68\x43\x6f\x72\x65"    //PUSH 0x65726f43
+#
+#C:\shellcode>perl pvePushString.pl "You have been pwned by Corelan"
+#String length : 30
+#Opcodes to push this string onto the stack :
+#
+#"\x68\x61\x6e\x20\x00"    //PUSH 0x00206e61
+#"\x68\x6f\x72\x65\x6c"    //PUSH 0x6c65726f
+#"\x68\x62\x79\x20\x43"    //PUSH 0x43207962
+#"\x68\x6e\x65\x64\x20"    //PUSH 0x2064656e
+#"\x68\x6e\x20\x70\x77"    //PUSH 0x7770206e
+#"\x68\x20\x62\x65\x65"    //PUSH 0x65656220
+#"\x68\x68\x61\x76\x65"    //PUSH 0x65766168
+#"\x68\x59\x6f\x75\x20"    //PUSH 0x20756f59
+
 if ($#ARGV ne 0) { 
 print "  usage: $0 ".chr(34)."String to put on stack".chr(34)."\n"; 
 exit(0); 
@@ -70,3 +94,5 @@ sub ascii_to_hex ($)
    (my $str = shift) =~ s/(.|\n)/sprintf("%02lx", ord $1)/eg;       
    return $str;    
 }
+
+
