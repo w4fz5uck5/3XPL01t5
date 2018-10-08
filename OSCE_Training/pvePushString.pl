@@ -5,7 +5,7 @@
 # and will produce the opcodes 
 # to push this string onto the stack
 #
-#
+#---------------------OUTPUT---------------------
 #C:\shellcode>perl pvePushString.pl
 #  usage: pvePushString.pl "String to put on stack"
 #
