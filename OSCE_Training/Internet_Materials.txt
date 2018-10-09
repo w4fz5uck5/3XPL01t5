@@ -21,3 +21,6 @@ ihack4Falafel:
 
 Basic-reverse-engineering-immunity-debugger:
     https://www.sans.org/reading-room/whitepapers/malicious/basic-reverse-engineering-immunity-debugger-36982
+
+Malware (meterpreter) analysis:
+    https://resources.infosecinstitute.com/analysis-of-malware-samples/#gref
