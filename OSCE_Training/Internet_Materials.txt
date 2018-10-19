@@ -24,3 +24,13 @@ Malware (meterpreter) analysis:
 
 Bypassing Windows DEP with WriteProcessMemory():
     https://www.exploit-db.com/papers/13660/
+    
+Sickness Blog:
+    http://ihazomgsecurityskillz.blogspot.com/
+
+Ret2reg:
+    https://github.com/everettjf/Papers/blob/master/Linux%20exploit%20writing%20tutorial%20part%202%20%20Stack%20Overflow%20ASLR%20bypass%20using%20ret2reg.pdf
+
+Ret2plt:
+    https://www.exploit-db.com/docs/english/17286-linux-exploit-development-part-4---ascii-armor-bypass-return-to-plt.pdf
+    
