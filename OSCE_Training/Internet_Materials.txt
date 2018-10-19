@@ -10,17 +10,17 @@ Corelan OSCE:
     https://www.corelan.be/index.php/2010/02/25/exploit-writing-tutorial-part-9-introduction-to-win32-shellcoding/
     https://www.corelan.be/index.php/2010/06/16/exploit-writing-tutorial-part-10-chaining-dep-with-rop-the-rubikstm-cube/
     
-    
 FuzzySecurity:
     http://www.fuzzysecurity.com/tutorials.html
-    
-    
+        
 ihack4Falafel:
     https://ihack4falafel.com/2018/01/rot-n-shift-n-xor-n-shellcode-encoder-linux-x86/
-
 
 Basic-reverse-engineering-immunity-debugger:
     https://www.sans.org/reading-room/whitepapers/malicious/basic-reverse-engineering-immunity-debugger-36982
 
 Malware (meterpreter) analysis:
     https://resources.infosecinstitute.com/analysis-of-malware-samples/#gref
+
+Bypassing Windows DEP with WriteProcessMemory():
+    https://www.exploit-db.com/papers/13660/
