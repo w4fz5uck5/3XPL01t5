@@ -2,6 +2,6 @@
 
 ![Screenshot](registers.png)
 
-# VirtualAlloc() ROP Method:
+# VirtualProtect() ROP Method:
 
 ![Screenshot](ROP_VirtualAlloc.png)
