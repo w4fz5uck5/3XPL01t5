@@ -1,7 +1,7 @@
-Registers:
+# Registers:
 
 ![Screenshot](registers.png)
 
-VirtualAlloc() ROP Method:
+# VirtualAlloc() ROP Method:
 
 ![Screenshot](ROP_VirtualAlloc.png)
