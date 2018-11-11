@@ -33,4 +33,6 @@ Ret2reg:
 
 Ret2plt:
     https://www.exploit-db.com/docs/english/17286-linux-exploit-development-part-4---ascii-armor-bypass-return-to-plt.pdf
-    
+
+InfoSec Institute:
+    https://resources.infosecinstitute.com/return-oriented-programming-rop-attacks/#gref
