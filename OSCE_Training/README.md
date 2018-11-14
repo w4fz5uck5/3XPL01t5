@@ -4,4 +4,4 @@
 
 # Virtual(Protect()/Alloc()) ROP Method:
 
-![Screenshot](ROP_VirtualAlloc.png)
+![Screenshot](w12.png)
