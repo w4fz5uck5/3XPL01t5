@@ -6,7 +6,7 @@ char code[] =
 // Simple MessageBoxA() win32 shellcode, with NULL bytes
 // Tutorial: https://www.corelan.be/index.php/2010/02/25/exploit-writing-tutorial-part-9-introduction-to-win32-shellcoding/
 // Author: w4fz5uck5
-// Generator used: mona.py -> Immunity Debbuger plugin
+// Used Generator: mona.py -> Immunity Debbuger plugin
 // Immunity Command e.g: !mona assemble -s "push ebx"
 
  
