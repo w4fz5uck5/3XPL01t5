@@ -1,4 +1,5 @@
-#vuplayer 2.49 ROP DEP Bypass virtualprotect() exploit 
+# vuplayer 2.49 ROP DEP Bypass virtualprotect() exploit 
+# Tested on win xp sp3
 import struct
 
 #----------------------------------------#
