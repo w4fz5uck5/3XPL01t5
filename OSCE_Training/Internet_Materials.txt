@@ -36,3 +36,6 @@ Ret2plt:
 
 InfoSec Institute:
     https://resources.infosecinstitute.com/return-oriented-programming-rop-attacks/#gref
+    
+HEAP stuff:
+    https://www.blackhat.com/presentations/bh-europe-07/Sotirov/Presentation/bh-eu-07-sotirov-apr19.pdf
