@@ -39,3 +39,7 @@ InfoSec Institute:
     
 HEAP stuff:
     https://www.blackhat.com/presentations/bh-europe-07/Sotirov/Presentation/bh-eu-07-sotirov-apr19.pdf
+
+Kernel Exploitation:
+    https://rootkits.xyz
+    https://www.abatchy.com/
