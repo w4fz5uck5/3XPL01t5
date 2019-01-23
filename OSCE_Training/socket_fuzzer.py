@@ -1,3 +1,5 @@
+# Examples: python socket_fuzzer.py 192.168.1.13 6666 "TRUN ./" 
+# Examples: python socket_fuzzer.py 192.168.1.13 21 "USER " 
 # cat socket_fuzzer.py                                                                                                                                                                                                                    
 # Simple deBrujin sequence Fuzzer by: w4fz5uck5 
 
