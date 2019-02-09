@@ -1,4 +1,5 @@
 # Simple HTTP Fuzzer utilizing boofuzz!
+# By w4fz5uck5
 # pip install boofuzz
 
 from boofuzz import * 
