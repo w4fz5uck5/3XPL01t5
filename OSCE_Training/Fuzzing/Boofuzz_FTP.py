@@ -1,6 +1,7 @@
 # Boofuzz FTP Fuzzer
 # By w4fz5uck5
 # pip install boofuzz
+# https://en.wikipedia.org/wiki/List_of_FTP_commands
 from boofuzz import * 
 import time
 
