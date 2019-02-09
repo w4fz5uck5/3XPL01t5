@@ -1,5 +1,6 @@
 # Boofuzz FTP Fuzzer
 # By w4fz5uck5
+# pip install boofuzz
 from boofuzz import * 
 import time
 
