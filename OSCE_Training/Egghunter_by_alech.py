@@ -1,3 +1,6 @@
+# w4fzu5uck5 -> I tested trying to attack a HTTP Software but seems doesn't work properly
+# i'm lazy, i'll not test again if not necessary..
+#
 # @alech - Alexander Klink
 # the \x2e in the egghunter turns into 0, so we manually fix it
 # up beforehand, with the following code
