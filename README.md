@@ -7,3 +7,6 @@ Enjoy ;)
 
 # Memory Segmentation Cheat Sheet 
 ![hot](cheat-sheet.png)
+
+# Exploit Cheat Sheet
+![hot](Useful_tips.jpg)
