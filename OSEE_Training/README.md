@@ -20,7 +20,7 @@
 | TypeConfusion                          | ❌          | ❌      |
 | UninitializedMemoryPagedPool           | ❌          | ❌      |
 | UninitializedMemoryStack               | ❌          | ❌      |
-| UseAfterFreeNonPagedPool               | ❌          | ❌      |
+| UseAfterFreeNonPagedPool               | ✔️          | ❌      |
 | UseAfterFreeNonPagedPoolNx             | ❌          | ❌      |
 | WriteNULL                              | ❌          | ❌      |
 
