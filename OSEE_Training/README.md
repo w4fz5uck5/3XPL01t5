@@ -26,4 +26,4 @@
 
 
 Checklist template by:
-https://raw.githubusercontent.com/m4drat/hevd-exploitation
+https://raw.githubusercontent.com/m4drat/hevd-exploitation/master/README.md
