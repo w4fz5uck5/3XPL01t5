@@ -19,7 +19,7 @@
 | NullPointerDereference                 | ❌          | ❌      |
 | TypeConfusion                          | ❌          | ❌      |
 | UninitializedMemoryPagedPool           | ❌          | ❌      |
-| UninitializedMemoryStack               | ❌          | ❌      |
+| UninitializedMemoryStack               | ✔️          | ❌      |
 | UseAfterFreeNonPagedPool               | ✔️          | ❌      |
 | UseAfterFreeNonPagedPoolNx             | ❌          | ❌      |
 | WriteNULL                              | ❌          | ❌      |
