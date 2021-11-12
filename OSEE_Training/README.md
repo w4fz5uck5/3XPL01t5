@@ -16,7 +16,7 @@
 | IntegerOverflow                        | ✔️          | ❌      |
 | MemoryDisclosureNonPagedPool           | ❌          | ❌      |
 | MemoryDisclosureNonPagedPoolNx         | ❌          | ❌      |
-| NullPointerDereference                 | ❌          | ❌      |
+| NullPointerDereference                 | ✔️          | ❌      |
 | TypeConfusion                          | ❌          | ❌      |
 | UninitializedMemoryPagedPool           | ❌          | ❌      |
 | UninitializedMemoryStack               | ✔️          | ❌      |
