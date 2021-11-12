@@ -13,7 +13,7 @@
 | BufferOverflowStackGS                  | ✔️          | ❌      |
 | DoubleFetch                            | ❌          | ❌      |
 | InsecureKernelResourceAccess           | ❌          | ❌      |
-| IntegerOverflow                        | ❌          | ❌      |
+| IntegerOverflow                        | ✔️          | ❌      |
 | MemoryDisclosureNonPagedPool           | ❌          | ❌      |
 | MemoryDisclosureNonPagedPoolNx         | ❌          | ❌      |
 | NullPointerDereference                 | ❌          | ❌      |
