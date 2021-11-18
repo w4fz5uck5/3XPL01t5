@@ -22,7 +22,7 @@
 | UninitializedMemoryStack               | ✔️          | ❌      |
 | UseAfterFreeNonPagedPool               | ✔️          | ❌      |
 | UseAfterFreeNonPagedPoolNx             | ❌          | ❌      |
-| WriteNULL                              | ❌          | ❌      |
+| WriteNULL                              | ✔️          | ❌      |
 
 
 Checklist template by:
