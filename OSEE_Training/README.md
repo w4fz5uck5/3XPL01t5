@@ -19,7 +19,7 @@
 | MemoryDisclosureNonPagedPoolNx         | ❌          | ❌      |
 | NullPointerDereference                 | ✔️          | ❌      |
 | TypeConfusion                          | ✔️          | ❌      |
-| UninitializedMemoryPagedPool           | ❌          | ❌      |
+| UninitializedMemoryPagedPool           | ✔️          | ❌      |
 | UninitializedMemoryStack               | ✔️          | ❌      |
 | UseAfterFreeNonPagedPool               | ✔️          | ❌      |
 | UseAfterFreeNonPagedPoolNx             | ❌          | ❌      |
