@@ -22,7 +22,7 @@
 | UninitializedMemoryPagedPool           | ✔️          | ❌      |
 | UninitializedMemoryStack               | ✔️          | ❌      |
 | UseAfterFreeNonPagedPool               | ✔️          | ❌      |
-| UseAfterFreeNonPagedPoolNx             | ❌          | ❌      |
+| UseAfterFreeNonPagedPoolNx             | ✔️          | ❌      |
 | WriteNULL                              | ✔️          | ❌      |
 
 
