@@ -15,8 +15,8 @@
 | DoubleFetch                            | ❌          | ❌      |
 | InsecureKernelResourceAccess           | ❌          | ❌      |
 | IntegerOverflow                        | ✔️          | ❌      |
-| MemoryDisclosureNonPagedPool           | ❌          | ❌      |
-| MemoryDisclosureNonPagedPoolNx         | ❌          | ❌      |
+| MemoryDisclosureNonPagedPool           | ✔️          | ❌      |
+| MemoryDisclosureNonPagedPoolNx         | ✔️          | ❌      |
 | NullPointerDereference                 | ✔️          | ❌      |
 | TypeConfusion                          | ✔️          | ❌      |
 | UninitializedMemoryPagedPool           | ✔️          | ❌      |
