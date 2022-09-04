@@ -2,7 +2,7 @@
 
 ## Tasks
 
-| task                                   | win7_64/86  | win10_64 |
+| Task                                   | win7_64/86  | win10_64 |
 |----------------------------------------|-------------|----------|
 | ArbitraryIncrement                     | ✔️          | ❌      |
 | ArbitraryReadWriteHelperNonPagedPoolNx | ❌          | ❌      |
