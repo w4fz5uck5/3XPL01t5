@@ -12,7 +12,7 @@
 | BufferOverflowPagedPoolSession         | ❌          | ❌      |
 | BufferOverflowStack                    | ✔️          | ❌      |
 | BufferOverflowStackGS                  | ✔️          | ❌      |
-| DoubleFetch                            | ❌          | ❌      |
+| DoubleFetch                            | ✔️          | ❌      |
 | InsecureKernelResourceAccess           | ❌          | ❌      |
 | IntegerOverflow                        | ✔️          | ❌      |
 | MemoryDisclosureNonPagedPool           | ✔️          | ❌      |
