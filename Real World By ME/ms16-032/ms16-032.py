@@ -15,7 +15,7 @@ GetThreadHandle() -> svchost.exe (0x04) [THREAD] -> python.exe (hThread = (0x04)
     | our python.exe process now have a SYSTEM thread from Service Secondary Logon (svchost.exe)
     v
 GetSystemToken(hThread) -> [SetThreadToken] -> [NtImpersonateThread] -> [OpenThreadToken]
-    | Impersonate hThread with his own rigths, now we got a SYSTEM Token handle in our current process.  
+    | Impersonate hThread with his own rights, now we got a SYSTEM Token handle in our current process.  
     v
 DuplicateToken()
     | Duplicate the token (related to current hThread) in order to get into a variable
@@ -25,7 +25,7 @@ DuplicateToken()
         |   |
         |  '-> Our current process [python.exe] start to re-use OR create new threads, it means that  
         |      threads which have SYSTEM Tokens, should spawn new process with respectives permissions.
-        |      (that's what i understood about it, but maybe it could be a wrong mindset)
+        |      (that's what i understood about it, but maybe it can be a wrong mindset)
         v
     SetThreadToken()
         | Use our token variable to impersonate hThread (current RACE CONDITION thread)
@@ -39,7 +39,7 @@ DuplicateToken()
             | which means, if our current thread [hThread] have SYSTEM permissions, when CreateProcessWithLogonW is launched
             | it will get SYSTEM permissions too. That's how we get a privileged cmd.exe shell.
 
-OBS: i don't really understand all shenanigans behind this technique, but the basics of basics i could understand
+OBS: i don't really know about all shenanigans behind this technique, but the basics of basics i can understand
 from James Forshaw white paper, Thanks!
 
 References:
